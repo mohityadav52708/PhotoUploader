@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Image Changer</title>
+</head>
+<style>
+    .product-images {
+    display: flex;
+    align-items: center;
+}
+.main-image{
+    width: 50%;
+    height: 50%;
+}
+.main-image img {
+    width: 100%;
+    height: 100%;
+}
+
+.thumbnail-images {
+    display: flex;
+}
+
+.thumbnail {
+    width: 80px;
+    height: 80px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.thumbnail:hover {
+    border: 2px solid #007bff;
+}
+
+</style>
+<body>
+    <div class="product-images">
+        <div class="main-image">
+            <img id="main-image" src="https://th.bing.com/th/id/R.6b46ec2944639713013d33688abda842?rik=D7RzzkNdLI9qdQ&riu=http%3a%2f%2f1.bp.blogspot.com%2f-YCY9D7NeWVk%2fU-kMj4i4_ZI%2fAAAAAAAAAHs%2f4ndlipQkYh0%2fs1600%2fDSC_6120MF2.jpg&ehk=2k7Hp2qFHAZtjTm3hBS2EMo%2fvYVIL2ffSs0xv43f5nw%3d&risl=&pid=ImgRaw&r=0" alt="Product Image">
+        </div>
+        <div class="thumbnail-images">
+            <img class="thumbnail" src="https://th.bing.com/th/id/R.6b46ec2944639713013d33688abda842?rik=D7RzzkNdLI9qdQ&riu=http%3a%2f%2f1.bp.blogspot.com%2f-YCY9D7NeWVk%2fU-kMj4i4_ZI%2fAAAAAAAAAHs%2f4ndlipQkYh0%2fs1600%2fDSC_6120MF2.jpg&ehk=2k7Hp2qFHAZtjTm3hBS2EMo%2fvYVIL2ffSs0xv43f5nw%3d&risl=&pid=ImgRaw&r=0" alt="Thumbnail 1">
+            <img class="thumbnail" src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D" alt="Thumbnail 2">
+            <img class="thumbnail" src="https://th.bing.com/th/id/R.6b46ec2944639713013d33688abda842?rik=D7RzzkNdLI9qdQ&riu=http%3a%2f%2f1.bp.blogspot.com%2f-YCY9D7NeWVk%2fU-kMj4i4_ZI%2fAAAAAAAAAHs%2f4ndlipQkYh0%2fs1600%2fDSC_6120MF2.jpg&ehk=2k7Hp2qFHAZtjTm3hBS2EMo%2fvYVIL2ffSs0xv43f5nw%3d&risl=&pid=ImgRaw&r=0" alt="Thumbnail 3">
+            <img class="thumbnail" src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D" alt="Thumbnail 4">
+        </div>
+    </div>
+
+    <script>
+        // Get references to DOM elements
+// Get references to DOM elements
+const mainImage = document.getElementById("main-image");
+const thumbnails = document.querySelectorAll(".thumbnail");
+
+// Add click event listeners to thumbnails
+thumbnails.forEach((thumbnail, index) => {
+    thumbnail.addEventListener("click", () => {
+        // Change the main image source when a thumbnail is clicked
+        mainImage.src = thumbnail.src;
+    });
+});
+
+
+    </script>
+</body>
+</html>
